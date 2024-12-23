@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-Dec-2024, 1:28:49 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping default-lazy="false">
+ <class name="com.rays.auction.AuctionItem" table="AUCTIONITEM">
+  <id name="id" type="int">
+   <column name="ID"/>
+   <generator class="assigned"/>
+  </id>
+  <set lazy="true" name="bids" sort="unsorted" table="AUCTIONITEM">
+   <key>
+    <column name="ID"/>
+   </key>
+   <element type="string">
+    <column name="BIDS"/>
+   </element>
+  </set>
+  <property generated="never" lazy="false" name="description" type="java.lang.String">
+   <column name="DESCRIPTION"/>
+  </property>
+ </class>
+</hibernate-mapping>
